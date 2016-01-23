@@ -1,0 +1,41 @@
+---
+title: "Storm impacts on economy and public heath in the United States"
+output: 
+  html_document:
+    keep_md: true
+---
+
+## Synopsis
+
+In this report we aim to ... TODO
+
+## Loading and Processing the Raw Data
+
+```{r echo = FALSE}
+url <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+```
+
+From the [NOAA Storm Database](https://www.ncdc.noaa.gov/stormevents/) we obtained [data](`r url`) on major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage. We obtained the files for years between 1950 and 2011.
+
+
+### Reading in the data
+
+```{r echo = TRUE, message = FALSE, cache = TRUE}
+bz2.filename <- "data.csv.bz2"
+download.file(url, bz2.filename)
+```
+
+```{r echo = TRUE, message = FALSE}
+library("R.utils")
+extracted.filename <- "data.csv"
+bunzip2(bz2.filename, extracted.filename, remove = FALSE, skip = TRUE)
+``` 
+
+```{r echo = TRUE, message = FALSE, cache = TRUE}
+raw_data <- read.csv(extracted.filename)
+``` 
+
+`r #nrow(raw_data)` records are present in raw data.
+
+TODO
+

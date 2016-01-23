@@ -1,3 +1,7 @@
 *.html
 *.md
+*.bz2
+*.csv
+rsconnect
+*_template_cache/
 
